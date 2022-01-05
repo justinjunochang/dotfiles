@@ -11,7 +11,7 @@ fi
 
 # Codespaces bash prompt theme
 __bash_prompt() {
-    local userpart='`echo -n "\[\033[0;32m\]justin-dev " 
+    local userpart='`echo -n "\[\033[0;32m\]justin-dev"`'
     local gitbranch='`\
         if [ "$(git config --get codespaces-theme.hide-status 2>/dev/null)" != 1 ]; then \
             export BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null); \
