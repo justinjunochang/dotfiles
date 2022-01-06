@@ -34,3 +34,5 @@ __bash_prompt
 alias start="cd /workspaces/obsidian && make dev-tmux"
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
 alias types="cd /workspaces/obsidian && make generate-types"
+alias grc="git add . && git rebase --continue"
+alias gra="git rebase --abort"
