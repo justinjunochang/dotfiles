@@ -30,6 +30,9 @@ __bash_prompt() {
 }
 __bash_prompt
 
+# Custom settings
+source /usr/share/bash-completion/completions/git
+
 # Custom aliases
 alias start="cd /workspaces/obsidian && make dev-tmux"
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
