@@ -1,0 +1,12 @@
+windows:
+    - services:
+        panes:
+            - start:
+                - /workspaces/obsidian/scripts/dev/start-services.sh web web-client
+    - lazydocker:
+        panes:
+            - lazydocker:
+                - cd ~ && lazydocker
+    - shell:
+        panes:
+            - shell:
