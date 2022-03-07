@@ -34,9 +34,21 @@ __bash_prompt
 source /usr/share/bash-completion/completions/git
 
 # Custom aliases
-alias start="cd /workspaces/obsidian && make dev-tmux"
+alias start="cd /workspaces/obsidian && tmuxinator start vanta -p ~/.vanta-tmux.yml"
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
 alias types="cd /workspaces/obsidian && make generate-types"
 alias grc="git add . && git rebase --continue"
 alias gra="git rebase --abort"
 alias cdo="cd /workspaces/obsidian"
+
+# Custom functions
+function ga() {
+    git add "$@";
+}
+function gcam() {
+    git commit -am "$1";
+}
+function gcamp() {
+    git commit -am "$1";
+    git push;
+}
