@@ -1,3 +1,4 @@
+name: vanta
 windows:
     - services:
         panes:
