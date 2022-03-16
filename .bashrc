@@ -42,6 +42,9 @@ alias gra="git rebase --abort"
 alias cdo="cd /workspaces/obsidian"
 
 # Custom functions
+function gc() {
+    git checkout "$1";
+}
 function ga() {
     git add "$@";
 }
