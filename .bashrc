@@ -33,6 +33,9 @@ __bash_prompt
 # Custom settings
 if [ -f "/usr/share/bash-completion/completions/git" ]; then
     source /usr/share/bash-completion/completions/git
+else
+    echo "Error loading git completions"
+fi
 
 # Custom aliases
 alias start="cd /workspaces/obsidian && tmuxinator start vanta -p ~/.vanta-tmux.yml"
