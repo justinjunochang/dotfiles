@@ -37,22 +37,20 @@ source /usr/share/bash-completion/completions/git
 alias start="cd /workspaces/obsidian && tmuxinator start vanta -p ~/.vanta-tmux.yml"
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
 alias types="cd /workspaces/obsidian && make generate-types"
+
+# Git aliases
 alias gs="git status"
+alias ga="git add"
+__git_complete ga _git_add
 alias gb="git branch"
+__git_complete gb _git_branch
+alias gc="git checkout"
+__git_complete gc _git_checkout
+alias gcam="git commit -am"
 alias grc="git add . && git rebase --continue"
 alias gra="git rebase --abort"
 alias cdo="cd /workspaces/obsidian"
 
-# Custom functions
-function gc() {
-    git checkout "$@";
-}
-function ga() {
-    git add "$@";
-}
-function gcam() {
-    git commit -am "$1";
-}
 function gcamp() {
     git commit -am "$1";
     git push;
