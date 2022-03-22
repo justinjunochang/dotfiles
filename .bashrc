@@ -31,27 +31,42 @@ __bash_prompt() {
 __bash_prompt
 
 # Custom settings
-source /usr/share/bash-completion/completions/git
+if [ -f "/usr/share/bash-completion/completions/git" ]; then
+    source /usr/share/bash-completion/completions/git
 
 # Custom aliases
 alias start="cd /workspaces/obsidian && tmuxinator start vanta -p ~/.vanta-tmux.yml"
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
 alias types="cd /workspaces/obsidian && make generate-types"
+alias cdo="cd /workspaces/obsidian"
 
 # Git aliases
 alias gs="git status"
+__git_complete gs _git_status
 alias ga="git add"
 __git_complete ga _git_add
 alias gb="git branch"
 __git_complete gb _git_branch
-alias gc="git checkout"
-__git_complete gc _git_checkout
+alias gbd="git branch -d"
+__git_complete gbd _git_branch
+alias go="git checkout"
+__git_complete go _git_checkout
 alias gcam="git commit -am"
+__git_complete gcam _git_commit
+alias gp="git push"
+__git_complete gp _git_push
+alias gpf="git push -f"
+__git_complete gpf _git_push
+alias gpu="git push -u origin HEAD"
+__git_complete gpu _git_push
 alias grc="git add . && git rebase --continue"
 alias gra="git rebase --abort"
-alias cdo="cd /workspaces/obsidian"
 
 function gcamp() {
     git commit -am "$1";
     git push;
+}
+function gcampu() {
+    git commit -am "$1";
+    git push -u origin HEAD;
 }
