@@ -38,6 +38,7 @@ alias start="cd /workspaces/obsidian && tmuxinator start vanta -p ~/.vanta-tmux.
 alias pull="cd /workspaces/obsidian && git pull --rebase origin main && make generate-types"
 alias types="cd /workspaces/obsidian && make generate-types"
 alias gs="git status"
+alias gb="git branch"
 alias grc="git add . && git rebase --continue"
 alias gra="git rebase --abort"
 alias cdo="cd /workspaces/obsidian"
