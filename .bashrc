@@ -54,7 +54,7 @@ alias gbd="git branch -d"
 __git_complete gbd _git_branch
 alias go="git checkout"
 __git_complete go _git_checkout
-alias gcam="git commit -am"
+alias gcam="git add . && git commit -m"
 __git_complete gcam _git_commit
 alias gp="git push"
 __git_complete gp _git_push
@@ -66,10 +66,12 @@ alias grc="git add . && git rebase --continue"
 alias gra="git rebase --abort"
 
 function gcamp() {
-    git commit -am "$1";
+    git add .
+    git commit -m "$1";
     git push;
 }
 function gcampu() {
-    git commit -am "$1";
+    git add .
+    git commit -m "$1";
     git push -u origin HEAD;
 }
