@@ -63,6 +63,7 @@ __git_complete gpf _git_push
 alias gpu="git push -u origin HEAD"
 __git_complete gpu _git_push
 alias grc="git add . && git rebase --continue"
+alias grs="git rebase --skip"
 alias gra="git rebase --abort"
 
 function gcamp() {
