@@ -3,7 +3,7 @@ windows:
     - services:
         panes:
             - start:
-                - /workspaces/obsidian/scripts/dev/start-services.sh web web-client
+                - /workspaces/obsidian/scripts/dev/start-services.sh web web-client lambda-document-syncer lambda-pdf-generator api-service
     - lazydocker:
         panes:
             - lazydocker:
